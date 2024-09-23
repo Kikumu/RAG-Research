@@ -9,9 +9,16 @@
 """
 
 from sentence_transformers import SentenceTransformer
-import faiss
+from dataloader.pdf_loader import retrieve_data
 import numpy as np
+import faiss
 
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+doc_embeddings = model.encode(retrieve_data("domain_retrieval"))
+dimension = doc_embeddings.shape[1]
+index = faiss.IndexFlatL2(dimension)
 
+index.add(np.array(doc_embeddings))
 
+# Save the index for future use (optional)
+faiss.write_index(index, "document_index.faiss")
