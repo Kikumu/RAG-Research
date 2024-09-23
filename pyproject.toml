@@ -7,7 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-
+torch = "2.4.1"
+transformers = "4.44.2"
+huggingface-hub = "0.25.0"
+black = "24.8.0"
+flake8 = "7.1.1"
+sentence-transformers = "3.1.1"
+faiss-cpu = "*"
+PyPDF2="3.0.1"
+pdfplumber="0.11.4"
 
 [build-system]
 requires = ["poetry-core"]

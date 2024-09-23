@@ -1,0 +1,2 @@
+FILE_TYPE = ".pdf"
+CHUNK_SIZE = 500
